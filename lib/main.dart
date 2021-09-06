@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'DeliFood',
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(title: TextStyle(fontFamily: 'RobotoCondensed',fontSize: 24)),
         accentColor: Colors.amber[50]
       ),
       home: CategoryPage(),
