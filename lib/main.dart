@@ -1,3 +1,4 @@
+import 'package:deli_food/pages/category_meal_page.dart';
 import 'package:deli_food/pages/category_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber[50]
       ),
       home: CategoryPage(),
+      routes: {
+        '/categories': (ctx) => CategoryMeals(),
+      },
     );
   }
 }
