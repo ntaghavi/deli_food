@@ -9,6 +9,7 @@ class CategoryWidget extends StatelessWidget {
     Navigator.of(ctx).pushNamed(routeName ,arguments: {
     'category': category,
     });
+
   }
   @override
   Widget build(BuildContext context) {
