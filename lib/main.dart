@@ -1,5 +1,6 @@
 import 'package:deli_food/pages/category_meal_page.dart';
 import 'package:deli_food/pages/category_page.dart';
+import 'package:deli_food/widgets/category_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       home: CategoryPage(),
       routes: {
-        '/categories': (ctx) => CategoryMeals(),
+        CategoryWidget.routeName : (ctx) => CategoryMeals(),
       },
     );
   }
