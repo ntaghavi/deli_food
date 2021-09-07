@@ -1,10 +1,12 @@
-import 'package:deli_food/data/dummy_meals.dart';
 import 'package:deli_food/models/category.dart';
+import 'package:deli_food/widgets/mealList_widget.dart';
 import 'package:flutter/material.dart';
 
 class CategoryMealsList extends StatelessWidget {
+    static const routeName = '/categories/mealList';
   void backToHome(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('/', arguments: {});
+    Navigator.of(ctx).pushNamed('/', arguments: {
+    });
   }
 
   @override
@@ -22,21 +24,7 @@ class CategoryMealsList extends StatelessWidget {
         title: Text('${category.title} Recipes'),
       ),
       body: Container(
-        child: ListView(
-            children: DUMMY_MEALS
-                .where((meal) => meal.categories.contains(category.id))
-                .map((meal) => ListTile(
-                      minVerticalPadding: 20,
-                      focusColor: Theme.of(context).primaryColorLight,
-                      selectedTileColor: Theme.of(context).primaryColorLight,
-                      leading: Icon(Icons.food_bank_outlined),
-                      title: Text(meal.title),
-                      trailing: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.favorite_border_outlined),
-                      ),
-                    ))
-                .toList()),
+        child: MealListWidget(),
       ),
     );
   }
