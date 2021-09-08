@@ -27,15 +27,33 @@ class _MyAppState extends State<MyApp> {
     'vegan': false,
     'lactose-free':false
   };
+   List<Meal> _favoriteMeals = [];
+
+  void _setFavorites(List<Meal> favsData){
+    setState(() {
+      _favoriteMeals = favsData;
+    });
+  }
    List<Meal> _availableMeals = DUMMY_MEALS;
   void _setFilters(Map<String,bool> filterData){
     setState(() {
         filters = filterData;
-        _availableMeals= DUMMY_MEALS.where((meal) => meal.isGlutenFree ==filters['gluten-free']
-                                      && meal.isVegetarian==filters['vegeterian']
-                                      && meal.isVegan == filters['vegan']
-                                      && meal.isLactoseFree == filters['lactose-free']
-                                        ).toList();
+        _availableMeals= DUMMY_MEALS.where((meal) {
+        print(filters);
+        if (filters['gluten-free'] as bool && !meal.isGlutenFree) {
+          return false;
+        }
+        if (filters['lactose-free'] as bool && !meal.isLactoseFree) {
+          return false;
+        }
+        if (filters['vegan'] as bool && !meal.isVegan) {
+          return false;
+        }
+        if (filters['vegeterian'] as bool && !meal.isVegetarian) {
+          return false;
+        }
+        return true;
+      }).toList();
     });
   }
   @override
