@@ -1,12 +1,13 @@
+import 'package:deli_food/models/category.dart';
 import 'package:deli_food/models/meal.dart';
-import 'package:deli_food/widgets/category_widget.dart';
 import 'package:deli_food/widgets/receipe.dart';
 import 'package:flutter/material.dart';
 
 class MealPage extends StatelessWidget {
   static const routeName = 'categories/mealList/meal';
+ 
   void backToMealList(BuildContext context) {
-    Navigator.of(context).pushNamed(CategoryWidget.routeName, arguments: {});
+    Navigator.of(context).pop();
   }
 
   @override

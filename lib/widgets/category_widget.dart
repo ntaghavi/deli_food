@@ -1,12 +1,13 @@
 import 'package:deli_food/models/category.dart';
+import 'package:deli_food/pages/category_page.dart';
 import 'package:flutter/material.dart';
 
 class CategoryWidget extends StatelessWidget {
-  static const routeName = '/categories';
+  
   final Category category;
   CategoryWidget(this.category);
   void selectCategory(BuildContext ctx){
-    Navigator.of(ctx).pushNamed(routeName ,arguments: {
+    Navigator.of(ctx).pushNamed(CategoryPage.routeName ,arguments: {
     'category': category,
     });
 
