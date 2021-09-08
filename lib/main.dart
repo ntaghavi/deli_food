@@ -28,13 +28,7 @@ class _MyAppState extends State<MyApp> {
     'vegan': false,
     'lactose-free':false
   };
-   List<Meal> _favoriteMeals = [];
-
-  void _setFavorites(List<Meal> favsData){
-    setState(() {
-      _favoriteMeals = favsData;
-    });
-  }
+ 
    List<Meal> _availableMeals = DUMMY_MEALS;
   void _setFilters(Map<String,bool> filterData){
     setState(() {
