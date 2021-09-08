@@ -1,10 +1,9 @@
-import 'package:deli_food/models/category.dart';
 import 'package:deli_food/models/meal.dart';
 import 'package:deli_food/widgets/receipe.dart';
 import 'package:flutter/material.dart';
 List<Meal> favorites = [];
 class MealPage extends StatefulWidget {
-  static const routeName = 'categories/mealList/meal';
+  static const routeName = '/meal';
 
   @override
   _MealPageState createState() => _MealPageState();

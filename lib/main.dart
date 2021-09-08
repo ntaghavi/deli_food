@@ -2,6 +2,7 @@ import 'package:deli_food/data/dummy_meals.dart';
 import 'package:deli_food/pages/404.dart';
 import 'package:deli_food/pages/category_mealsList.dart';
 import 'package:deli_food/pages/category_page.dart';
+import 'package:deli_food/pages/favorites_page.dart';
 import 'package:deli_food/pages/filters_page.dart';
 import 'package:deli_food/pages/meal_page.dart';
 import 'package:deli_food/pages/tabs_page.dart';
@@ -72,7 +73,8 @@ class _MyAppState extends State<MyApp> {
        '/':(ctx) => TabScreen(),
         CategoryPage.routeName: (ctx)=>CategoryMealsList(_availableMeals),
          MealPage.routeName: (ctx) => MealPage(),
-         FiltersPage.routeName: (ctx) => FiltersPage(_setFilters)
+         FiltersPage.routeName: (ctx) => FiltersPage(_setFilters),
+         FavoritesPage.routeName: (ctx) => FavoritesPage(),
 
       },onUnknownRoute: (RouteSettings settings) {
       return MaterialPageRoute<void>(
